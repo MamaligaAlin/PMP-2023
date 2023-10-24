@@ -1,5 +1,5 @@
 from scipy import stats
-
+# EX - 1
 
 lambda_p = 20
 poisson_dist = stats.poisson(mu=lambda_p)
