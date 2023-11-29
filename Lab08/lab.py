@@ -24,4 +24,11 @@ with pm.Model() as model:
 
 az.plot_trace(idata, var_names=['alpha', 'beta1','beta2', 'eps'])
 print(az.summary(idata, var_names=['alpha', 'beta1','beta2', 'eps']))
+hdi_beta1 = az.hdi(idata.posterior["beta1"], hdi_prob=0.95)
+hdi_beta2 = az.hdi(idata.posterior["beta2"], hdi_prob=0.95)
+
+print(f"95% HDI - beta1: {hdi_beta1}")
+print(f"95% HDI - beta2: {hdi_beta2}")
 plt.show()
+
+
